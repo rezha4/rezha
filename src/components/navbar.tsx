@@ -48,7 +48,7 @@ const Navbar = () => {
       ) : (
         <div
           onClick={() => setShow(!show)}
-          className="border border-solid border-gray w-44 h-1 bg-gray-500 rounded-full transition-all ease-in-out duration-500"
+          className="border border-solid border-gray-200 w-44 h-1 bg-gray-200 rounded-full transition-all ease-in-out duration-500"
           onMouseEnter={() => setShow(true)}
         >
         </div>
