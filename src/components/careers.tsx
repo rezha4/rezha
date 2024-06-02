@@ -1,32 +1,64 @@
 "use client";
 
-import Image from "next/image";
+import {
+  DoubleArrowDownIcon,
+  DoubleArrowUpIcon,
+} from "@radix-ui/react-icons";
+import { useState } from "react";
 
 const Careers = () => {
+  const [show, setShow] = useState(false);
+
   return (
-    <div>
-      <h2 className="text-3xl">/Career</h2>
-      <div className="flex justify-around items-center">
-        <div className="flex items-center h-fit rounded-xl p-4 bg-gray-200">
+    <div
+      className="py-12 mx-auto px-4 space-y-6"
+    >
+      <h2 className="text-3xl sm:text-4xl font-bold">/Careers</h2>
+      <div className="flex flex-col items-center">
+        <button
+          onClick={() => setShow(!show)}
+          className={`transition-all ease-in-out w-fit ${!show && "animate-[pulse_2s_ease-in-out_infinite]"}`}
+        >
+          {show ? (
+            <DoubleArrowDownIcon width={25} height={25} />
+          ) : (
+            <DoubleArrowUpIcon width={25} height={25} />
+          )}
+        </button>
+        <div className="py-2 border rounded-md gap-8 px-4 flex items-center">
           <div>
-            <p>Full Stack Web Developer</p>
-            <p className="text-gray-500">Platon (PT.Sinergi Rajawali Mataram)</p>
+            <img
+              width={50}
+              height={50}
+              className=""
+              src="https://media.licdn.com/dms/image/D560BAQE6x69OGAU29A/company-logo_200_200/0/1688716830182/platoncoid_logo?e=1725494400&v=beta&t=LerX6lIYOEpLYt487Bct7jXUS4hAIeQV2dFLJBWNG_4"
+            />
           </div>
-          <img
-            src={
-              "https://media.licdn.com/dms/image/D560BAQE6x69OGAU29A/company-logo_200_200/0/1688716830182/platoncoid_logo?e=1725494400&v=beta&t=LerX6lIYOEpLYt487Bct7jXUS4hAIeQV2dFLJBWNG_4"
-            }
-            alt="platon logo"
-            width={50}
-            height={50}
-            className="rounded-full"
-          />
+          <div className="space-y-1">
+            <p className="font-bold">Platon (PT.Sinergi Rajawali)</p>
+            <p>Full Stack Web Developer | December 2023 - Present</p>
+            <ul className="list-disc text-xs">
+              <li>
+                Perigigi - Created a separate dev environment, 1:1
+                with production (database, auth hash & the entire
+                codebase)
+              </li>
+              <li>
+                Perigigi - Created a serverless HTTP route handler, to
+                integrate government API
+              </li>
+              <li>
+                Perigigi - Created a serverless scheduled function, to
+                automate document & API processes
+              </li>
+              <li>
+                Perigigi - General bug fixing and feature additions,
+                big features I added are: Odontogram, Instalment
+                payment option, Dashboard statistics
+              </li>
+            </ul>
+          </div>
         </div>
-        <img
-          src={"/rezha-bahari-hero.webp"}
-          className="w-48 sm:w-[400px] max-h-[400px] object-fill"
-          alt="rezha's picture"
-        />
       </div>
     </div>
   );

@@ -1,14 +1,10 @@
 "use client";
 
-import {
-  DoubleArrowDownIcon,
-  EnvelopeClosedIcon,
-  GitHubLogoIcon,
-  LinkedInLogoIcon,
-} from "@radix-ui/react-icons";
-import { useState } from "react";
+
+import { FC, useState } from "react";
+import ProfilePhoto from "./shared/profile-photo";
+import StickyContact from "./shared/sticky-contact";
 import { Gloria_Hallelujah } from "next/font/google";
-import { FaWhatsapp } from "react-icons/fa";
 
 const gloria = Gloria_Hallelujah({
   weight: "400",
@@ -20,10 +16,11 @@ const Hero = () => {
 
   return (
     <>
-      <div className="h-screen flex flex-col items-center justify-center space-y-8 sm:space-y-16">
-        <h1 className="font-semibold text-2xl sm:text-4xl text-center">
+      <div className="h-screen flex flex-col items-center justify-center space-y-4 sm:space-y-8">
+        <h1 className="font-bold text-2xl sm:text-4xl text-center">
           Rezha Bahari
         </h1>
+        <ProfilePhoto />
         <div>
           <h2 className="sm:text-2xl text-center">
             Full Stack Developer with a{" "}
@@ -34,7 +31,7 @@ const Hero = () => {
             </span>{" "}
             in mind
           </h2>
-          <h3 className="text-gray-400 mt-4 italic text-center mx-2 max-w-[35rem]">
+          <h3 className="text-gray-400 mt-4 italic text-center mx-2 max-w-[35rem] text-xs sm:text-sm">
             Ideation. Wireframing. UI/UX. Coding. Testing. Deployment.{" "}
             <br /> Continuous integration. Continuous Deployment.
           </h3>
@@ -52,13 +49,7 @@ const Hero = () => {
           Outside of coding, I am interested in pop art.
 
         </h3> */}
-        <div className="flex gap-4">
-          <p>Let's connect.</p>
-          <GitHubLogoIcon width={25} height={25} />
-          <LinkedInLogoIcon width={25} height={25} />
-          <EnvelopeClosedIcon width={25} height={25} />
-          <FaWhatsapp style={{ width: 25, height: 25 }} />
-        </div>
+
         {/* <button>
           <DoubleArrowDownIcon />
         </button> */}
