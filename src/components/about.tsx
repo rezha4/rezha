@@ -42,7 +42,7 @@ const About = () => {
         <p>
           As a full stack developer, I am involved in all process of
           development. Starting with ideation, to wireframes, UI/UX
-          designs, then coding, testing, deployment and it "ends" with
+          designs, then coding, testing, deployment and it {"ends"} with
           Continous Integration and Contious Deployment (CI/CD).
           <br />
           <br />
