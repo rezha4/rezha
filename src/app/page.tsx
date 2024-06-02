@@ -6,19 +6,19 @@ import WorkFlow from "@/components/work-flow";
 import BlogPosts from "@/components/blog-posts";
 import { ModeToggle } from "@/components/shared/mode-toggle";
 import StickyContact from "@/components/shared/sticky-contact";
+import About from "@/components/about";
 
 export default function Home() {
   return (
     <>
-      <div className="fixed">
         <ModeToggle />
-      </div>
       <StickyContact />
       <div className="dark:bg-black dark:text-white">
         <div className="fixed top-[90%] left-0 w-full flex justify-center">
           <Navbar />
         </div>
         <Hero />
+        <About />
         <Careers />
         <Projects />
         <WorkFlow />

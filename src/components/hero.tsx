@@ -36,23 +36,6 @@ const Hero = () => {
             <br /> Continuous integration. Continuous Deployment.
           </h3>
         </div>
-        {/* <h3 className="text-center mx-2 max-w-[35rem]">
-          As a full stack developer, I am involved in all process of
-          development. Starting with ideation, to wireframes, UI/UX
-          designs, then coding, testing, deployment and it "ends" with
-          Continous Integration and Contious Deployment (CI/CD).
-          <br />
-          <br />
-          I am excited to talk about tech.
-          <br />
-          <br />
-          Outside of coding, I am interested in pop art.
-
-        </h3> */}
-
-        {/* <button>
-          <DoubleArrowDownIcon />
-        </button> */}
       </div>
     </>
   );
