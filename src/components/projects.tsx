@@ -20,6 +20,83 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "./ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Link from "next/link";
+import { FaReact } from "react-icons/fa";
+
+const myProjects = [
+  {
+    title: "Perigigi",
+    subtitle: "ERP for dentists & clinics",
+    shortDesc:
+      "I'm part of the developer team at Platon who handles this project",
+    longDesc:
+      "I created a separate dev env from scratch, HTTP route handler, government API integration, general bug fixing and feature addition (big features: odontogram, ohis, instalment, statistic)",
+    thumbnail: "./perigigi/perigigi-home.png",
+    images: [
+      "./perigigi/perigigi-home.png",
+      "./perigigi/perigigi-odontogram.png",
+      "./perigigi/perigigi-satusehat.png",
+      "./perigigi/perigigi-instalment.png",
+      "./perigigi/perigigi-ohis.png",
+    ],
+    github: "NDA",
+    live: "https://perigigi.com/",
+  },
+  {
+    title: "AI.mage",
+    subtitle: "SaaS for manipulating images with AI",
+    shortDesc:
+      "I'm the sole founder & engineer of this SaaS image processing AI",
+    longDesc: "I achieve this and that",
+    thumbnail: "./ai/ai-remove.png",
+    images: [
+      "./ai/ai-home.png",
+      "./ai/ai-dashboard.png",
+      "./ai/ai-init.png",
+      "./ai/ai-payment.png",
+      "./ai/ai-recolor.png",
+      "./ai/ai-remove.png",
+      "./ai/ai-uploader.png",
+      "./ai/ai-login.png",
+    ],
+    github: "https://github.com/rezha4/ai.mage",
+    live: "https://ai-mage.vercel.app/",
+  },
+  {
+    title: "UndanganOnline.com",
+    subtitle: "Invitation SaaS",
+    shortDesc:
+      "I'm the first engineer and co-founder of this invitation app.",
+    longDesc: "I achieve this and that",
+    thumbnail: "./undangan/undangan-edit.png",
+    images: [
+      "./undangan/undangan-home.png",
+      "./undangan/undangan-login.png",
+      "./undangan/undangan-dashboard.png",
+      "./undangan/undangan-edit.png",
+    ],
+    github: "https://github.com/rezha4/ai.mage",
+    live: "https://ai-mage.vercel.app/",
+  },
+];
+
+interface myProjectsProps {
+  title: string;
+  subtitle: string;
+  shortDesc: string;
+  longDesc: string;
+  thumbnail: string;
+  images: string[];
+  github: string;
+  live: string;
+}
 
 const Projects = () => {
   return (
@@ -27,47 +104,100 @@ const Projects = () => {
       <div className="py-12 mx-auto px-4">
         <h2 className="text-3xl sm:text-4xl font-bold">/Projects</h2>
       </div>
-      <div className="grid place-items-center grid-cols-3 gap-2 mx-4">
-        <Drawer>
-          <DrawerTrigger><ProjectCard /></DrawerTrigger>
-          <DrawerContent>
-            <DrawerHeader>
-              <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-              <DrawerDescription>
-                This action cannot be undone.
-              </DrawerDescription>
-            </DrawerHeader>
-            <DrawerFooter>
-              <Button>Submit</Button>
-              <DrawerClose>
-                <Button variant="outline">Cancel</Button>
-              </DrawerClose>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
-        
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+      <div className="grid place-items-center grid-cols-1 sm:grid-cols-3 gap-2 mx-4">
+        {myProjects.map((project, index) => (
+          <DrawerCard key={index} props={project} />
+        ))}
       </div>
     </>
   );
 };
 
-const ProjectCard = () => {
+const DrawerCard = ({ props }: { props: myProjectsProps }) => {
   return (
-    <Card className="max-w-64 transition-all duration-500 hover:scale-105">
+    <Drawer>
+      <DrawerTrigger>
+        <ProjectCard props={props} />
+      </DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>
+            {props.title} | {props.subtitle}
+          </DrawerTitle>
+          <DrawerDescription className="flex flex-col justify-center items-center">
+            <Carousel className="w-full max-w-xs sm:max-w-md">
+              <CarouselContent>
+                {props.images.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="">
+                      <Card className="max-w-xs">
+                        <CardContent className="flex aspect-square items-center justify-center">
+                          <img
+                            src={image}
+                            className="object-contain"
+                          />
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+            {props.longDesc}
+            <div className="flex gap-4">Tech Stack: - (NDA)</div>
+          </DrawerDescription>
+        </DrawerHeader>
+        <DrawerFooter>
+          <div className="flex justify-stretch gap-2">
+            {props.github === "NDA" ? (
+              <Button disabled className="w-full">
+                Private Github (NDA)
+              </Button>
+            ) : (
+              <Link
+                className="w-full"
+                target="blank"
+                href={props.github}
+              >
+                <Button className="w-full">Github</Button>
+              </Link>
+            )}
+            <Button className="w-full">
+              <Link target="blank" href={props.live}>
+                Live Preview
+              </Link>
+            </Button>
+          </div>
+          <DrawerClose className="w-full">
+            <Button variant="outline" className="w-full">
+              Close
+            </Button>
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  );
+};
+
+const ProjectCard = ({ props }: { props: myProjectsProps }) => {
+  return (
+    <Card className="w-full transition-all duration-500 hover:scale-105">
+      <img
+        src={props.thumbnail}
+        className="w-full max-h-40 object-contain mb-2 p-2"
+        style={{ maxWidth: "100%" }}
+      />
       <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
+        <CardTitle>{props.title}</CardTitle>
+        <CardDescription>{props.subtitle}</CardDescription>
       </CardHeader>
       <CardContent>
-        <p>Card Content</p>
+        <p className="line-clamp-1">{props.shortDesc}</p>
       </CardContent>
       <CardFooter>
-        <p>Card Footer</p>
+        <p></p>
       </CardFooter>
     </Card>
   );

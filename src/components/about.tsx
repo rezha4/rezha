@@ -24,12 +24,12 @@ const About = () => {
       {/* <h2 className="text-3xl sm:text-4xl font-bold">/About</h2> */}
       <div className="flex gap-2 items-center justify-center">
         <p className="font-mono">main tech stack:</p>
-        <SiNextdotjs className="w-10 h-10" />
-        <FaReact className="w-10 h-10" />
-        <RiTailwindCssFill className="w-10 h-10" />
-        <SiTypescript className="w-10 h-10" />
-        <FaFigma className="w-10 h-10" />
+        <SiNextdotjs className="w-5 h-5 sm:w-10 sm:h-10" />
+        <FaReact className="w-5 h-5 sm:w-10 sm:h-10" />
+        <RiTailwindCssFill className="w-5 h-5 sm:w-10 sm:h-10" />
+        <SiTypescript className="w-5 h-5 sm:w-10 sm:h-10" />
         {/* 
+        <FaFigma className="w-10 h-10" />
         <FaHtml5 className="w-10 h-10" />
         <IoLogoCss3 className="w-10 h-10" />
         <SiJavascript className="w-10 h-10" />
