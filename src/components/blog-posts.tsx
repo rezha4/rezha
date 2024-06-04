@@ -14,8 +14,8 @@ const BlogPosts = async() => {
       {/* {JSON.stringify(posts)} */}
       <div className="flex justify-center items-center gap-4">
         {posts.map((post) => (
-          <Link href={`/blog/${post.id}`}>
-            <Card className="max-w-80" key={post.id}>
+          <Link key={post.id} href={`/blog/${post.id}`}>
+            <Card className="max-w-80" >
               <CardHeader>
                 <CardTitle>
                   <h4 className="text-xl">{post.title}</h4>
