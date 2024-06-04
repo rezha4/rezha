@@ -54,8 +54,8 @@ const myProjects = [
     subtitle: "SaaS for manipulating images with AI",
     shortDesc:
       "I'm the sole founder & engineer of this SaaS image processing AI",
-    longDesc: "I achieve this and that",
-    thumbnail: "./ai/ai-remove.png",
+    longDesc: "AI with Cloudinary. Stripe for payment. Built with Next JS. Hosted on Vercel.",
+    thumbnail: "./ai/ai-dashboard.png",
     images: [
       "./ai/ai-home.png",
       "./ai/ai-dashboard.png",
@@ -74,7 +74,7 @@ const myProjects = [
     subtitle: "Invitation SaaS",
     shortDesc:
       "I'm the first engineer and co-founder of this invitation app.",
-    longDesc: "I achieve this and that",
+    longDesc: "We provide affordable solution for couple to digitalize their invitation. Project is still in progress.",
     thumbnail: "./undangan/undangan-edit.png",
     images: [
       "./undangan/undangan-home.png",
@@ -82,8 +82,8 @@ const myProjects = [
       "./undangan/undangan-dashboard.png",
       "./undangan/undangan-edit.png",
     ],
-    github: "https://github.com/rezha4/ai.mage",
-    live: "https://ai-mage.vercel.app/",
+    github: "NDA",
+    live: "https://undangan-online-adf6d.web.app/",
   },
 ];
 
@@ -102,7 +102,7 @@ const Projects = () => {
   return (
     <>
       <div className="py-12 mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl font-bold">/Projects</h2>
+        <h2 className="text-center text-3xl sm:text-4xl font-bold font-hand">Projects</h2>
       </div>
       <div className="grid place-items-center grid-cols-1 sm:grid-cols-3 gap-2 mx-4">
         {myProjects.map((project, index) => (
@@ -183,15 +183,15 @@ const DrawerCard = ({ props }: { props: myProjectsProps }) => {
 
 const ProjectCard = ({ props }: { props: myProjectsProps }) => {
   return (
-    <Card className="w-full transition-all duration-500 hover:scale-105">
+    <Card className="w-full h-80 transition-all duration-500 hover:scale-105">
       <img
         src={props.thumbnail}
-        className="w-full max-h-40 object-contain mb-2 p-2"
+        className="w-full h-40 object-contain mb-2 p-2"
         style={{ maxWidth: "100%" }}
       />
       <CardHeader>
-        <CardTitle>{props.title}</CardTitle>
-        <CardDescription>{props.subtitle}</CardDescription>
+        <CardTitle className="line-clamp-1">{props.title}</CardTitle>
+        <CardDescription className="line-clamp-1">{props.subtitle}</CardDescription>
       </CardHeader>
       <CardContent>
         <p className="line-clamp-1">{props.shortDesc}</p>

@@ -7,6 +7,7 @@ import BlogPosts from "@/components/blog-posts";
 import { ModeToggle } from "@/components/shared/mode-toggle";
 import StickyContact from "@/components/shared/sticky-contact";
 import About from "@/components/about";
+import Footer from "@/components/shared/footer";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <Projects />
         <WorkFlow />
         <BlogPosts />
+        <Footer />
       </div>
     </>
   );

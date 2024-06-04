@@ -13,7 +13,7 @@ const Careers = () => {
     <div
       className="py-12 mx-auto px-4 space-y-6"
     >
-      <h2 className="text-3xl sm:text-4xl font-bold">/Careers</h2>
+      <h2 className="text-center text-3xl sm:text-4xl font-bold font-hand">Careers</h2>
       <div className="flex flex-col items-center">
         <button
           onClick={() => setShow(!show)}
