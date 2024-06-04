@@ -19,7 +19,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="z-[100] flex items-center justify-center">
+    <div className="z-[100] flex items-center justify-center backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-full">
       {show ? (
         <div
           onMouseLeave={() =>
@@ -48,7 +48,7 @@ const Navbar = () => {
       ) : (
         <div
           onClick={() => setShow(!show)}
-          className="border border-solid border-black dark:border-white w-44 h-2 dark:bg-white bg-black rounded-full transition-all ease-in-out duration-500"
+          className="w-44 h-2 dark:bg-white dark:bg-opacity-50 bg-black rounded-full transition-all ease-in-out duration-500 backdrop-filter backdrop-blur-sm bg-opacity-50"
           onMouseEnter={() => setShow(true)}
         ></div>
       )}
