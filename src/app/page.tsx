@@ -12,7 +12,7 @@ import Footer from "@/components/shared/footer";
 export default function Home() {
   return (
     <>
-        <ModeToggle />
+      <ModeToggle />
       <StickyContact />
       <div className="dark:bg-black dark:text-white">
         <div className="fixed top-[90%] left-0 w-full flex justify-center">

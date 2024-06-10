@@ -17,8 +17,7 @@ const BlogPosts = async() => {
           <Link key={post.id} href={`/blog/${post.id}`}>
             <Card className="max-w-80" >
               <CardHeader>
-                <CardTitle>
-                  <h4 className="text-xl">{post.title}</h4>
+                <CardTitle className="text-xl">{post.title}
                 </CardTitle>
                 <p className="text-xs border w-fit p-1 rounded-xl">
                   {post.tags}
