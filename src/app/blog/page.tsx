@@ -17,7 +17,7 @@ const BlogPage = async () => {
                 {post.title}
               </p>
               {formatTagsToArray(post.tags).map((tag) => (
-                <p>{tag}</p>
+                <p key={tag}>{tag}</p>
               ))}
               <p>{formatDateTime(post.createdAt)}</p>
             </div>
