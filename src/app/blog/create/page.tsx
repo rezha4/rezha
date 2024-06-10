@@ -3,9 +3,8 @@
 import { useRef, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { Button } from "@/components/ui/button";
-import { createPost } from "@/lib/actions";
 import { Writer } from "tinymce";
-
+import { createPost } from "./createPost";
 export interface BlogPost {
   title: string;
   content: string;
@@ -24,19 +23,6 @@ const CreateBlog = () => {
   };
 
   const handleSave = async () => {
-    // const content = editorRef.current.getContent(); // Get editor content
-
-    // const response = await fetch('/api/save-post', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ title, tags }),
-    // });
-
-    // if (response.ok) {
-    //   console.log('Post saved successfully!');
-    // } else {
-    //   console.error('Error saving post:', await response.text());
-    // }
     if (editorRef.current) {
       const datas: BlogPost = {
         title,
