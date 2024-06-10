@@ -34,3 +34,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Workflow Create Blog
+
+```bash
+git checkout write
+```
+
+Write post at /blog/create
+
+Save and commit
+```bash
+git add . && git commit -m "new blog post"
+```
+
+bring db to main, then commit & push
+```bash
+git checkout main
+git checkout commithash prisma/dev.db
+git add . && git commit -m "new blog post" && git push origin main
+```
