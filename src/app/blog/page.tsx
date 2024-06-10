@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma"
+import { formatDateTime, formatTagsToArray } from "@/lib/utils";
 import Link from "next/link";
 
 const BlogPage = async () => {
@@ -10,11 +11,15 @@ const BlogPage = async () => {
       </h2>
       <div className="flex flex-col gap-4">
         {posts.map((post) => (
-          <Link className="transition-all duration-500 ease-in-out hover:scale-95 active:scale-100" href={`/blog/${post.id}`} key={post.id}>
+          <Link href={`/blog/${post.id}`} key={post.id}>
             <div className="border rounded-md shadow-md p-2 space-y-2">
-              <p className="text-xl font-semibold">{post.title}</p>
-              <p>{post.tags}</p>
-              <p>{JSON.stringify(post.createdAt)}</p>
+              <p className="text-xl font-semibold text-center">
+                {post.title}
+              </p>
+              {formatTagsToArray(post.tags).map((tag) => (
+                <p>{tag}</p>
+              ))}
+              <p>{formatDateTime(post.createdAt)}</p>
             </div>
           </Link>
         ))}
