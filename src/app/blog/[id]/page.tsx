@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import DOMPurify from "dompurify";
 
 export async function generateStaticParams() {
   const posts = await prisma.post.findMany();
@@ -14,11 +15,16 @@ const BlogPost = async ({ params }: { params: { id: string } }) => {
       id: Number(params.id),
     },
   });
+
+  if (!currentPost) return <p>Error fetching content</p>
+
+  // const sanitizedContent = DOMPurify.sanitize(currentPost?.content);
+
   return (
     <div>
-      youre at {params.id} {JSON.stringify(currentPost)}
+      {/* youre at {params.id} {JSON.stringify(currentPost)} */}
       <h1 className="text-2xl">{currentPost?.title}</h1>
-      <p>{currentPost?.content}</p>
+      <div dangerouslySetInnerHTML={{ __html: currentPost?.content }} />
       <p className="text-xs">{currentPost?.tags}</p>
       <p>
         Created on:{" "}

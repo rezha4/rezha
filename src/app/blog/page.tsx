@@ -6,9 +6,6 @@ const BlogPage = async () => {
   const posts = await prisma.post.findMany();
   return (
     <div>
-      <h2 className="text-2xl md:text-4xl my-4">
-        Welcome to my blog!
-      </h2>
       <div className="flex flex-col gap-4">
         {posts.map((post) => (
           <Link href={`/blog/${post.id}`} key={post.id}>
@@ -16,9 +13,13 @@ const BlogPage = async () => {
               <p className="text-xl font-semibold text-center">
                 {post.title}
               </p>
-              {formatTagsToArray(post.tags).map((tag) => (
-                <p key={tag}>{tag}</p>
-              ))}
+              <div className="flex gap-2">
+                {formatTagsToArray(post.tags).map((tag, index) => (
+                  <div key={index} className="border rounded-full px-2">
+                    <p>{tag}</p>
+                  </div>
+                ))}
+              </div>
               <p>{formatDateTime(post.createdAt)}</p>
             </div>
           </Link>

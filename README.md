@@ -46,6 +46,7 @@ Write post at /blog/create
 Save and commit
 ```bash
 git add . && git commit -m "new blog post"
+git log (copy the latest commithash)
 ```
 
 bring db to main, then commit & push

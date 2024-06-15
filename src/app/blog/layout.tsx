@@ -6,11 +6,8 @@ import React, { ReactNode } from "react";
 const BlogLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
-      <div className="mb-8">
-        <ModeToggle />
-        <StickyContact />
-      </div>
-      <div className="min-h-[50vh] px-4 py-2">{children}</div>
+      <StickyContact />
+      <div className="min-h-[50vh] p-8 mt-8">{children}</div>
       <Footer />
     </div>
   );

@@ -1,16 +1,24 @@
 import {
   EnvelopeClosedIcon,
   GitHubLogoIcon,
+  HomeIcon,
   LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
+import { ModeToggle } from "./mode-toggle";
 
 const StickyContact = () => {
   return (
-    <div className="flex -mb-8 justify-center sticky top-0">
-      <div className="flex gap-4 backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-full p-2">
-        <p className="hidden sm:inline-block">{"Let's connect."}</p>
+    <div className=" flex justify-center fixed top-0">
+      <div className="flex justify-between items-center gap-4 backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-full p-2">
+        <ModeToggle />
+        <Link className="underline" href={"/blog"}>
+          Blog
+        </Link>
+        <Link className="underline" href={"/"}>
+          Rezha
+        </Link>
         <Link target="blank" href={"https://github.com/rezha4"}>
           <GitHubLogoIcon width={25} height={25} />
         </Link>

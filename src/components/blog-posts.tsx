@@ -12,7 +12,7 @@ const BlogPosts = async() => {
         Blogs
       </h2>
       {/* {JSON.stringify(posts)} */}
-      <div className="flex justify-center items-center gap-4">
+      <div className="flex flex-wrap justify-center items-center gap-4">
         {posts.map((post) => (
           <Link key={post.id} href={`/blog/${post.id}`}>
             <Card className="max-w-80" >

@@ -38,7 +38,7 @@ export function ModeToggle() {
     // </DropdownMenu>
     <Button
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="fixed z-20"
+      // className="fixed z-20"
       variant="ghost"
       size="icon"
     >
