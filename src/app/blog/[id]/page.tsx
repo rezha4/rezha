@@ -23,10 +23,10 @@ const BlogPost = async ({ params }: { params: { id: string } }) => {
   return (
     <div>
       {/* youre at {params.id} {JSON.stringify(currentPost)} */}
-      <h1 className="text-2xl">{currentPost?.title}</h1>
+      <h1 className="text-4xl text-center my-8">{currentPost?.title}</h1>
       <div className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: currentPost?.content }} />
-      <p className="text-xs">{currentPost?.tags}</p>
-      <p>
+      <p className="text-sm mt-8">Tags: {currentPost?.tags}</p>
+      <p className="text-sm mt-2">
         Created on:{" "}
         {new Date(currentPost?.createdAt as Date).toLocaleDateString(
           undefined,
