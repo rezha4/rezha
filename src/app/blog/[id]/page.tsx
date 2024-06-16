@@ -24,7 +24,7 @@ const BlogPost = async ({ params }: { params: { id: string } }) => {
     <div>
       {/* youre at {params.id} {JSON.stringify(currentPost)} */}
       <h1 className="text-2xl">{currentPost?.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: currentPost?.content }} />
+      <div className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: currentPost?.content }} />
       <p className="text-xs">{currentPost?.tags}</p>
       <p>
         Created on:{" "}
