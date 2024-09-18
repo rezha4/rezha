@@ -16,20 +16,14 @@ const Hero = () => {
 
   return (
     <>
-      <div className="h-screen flex flex-col items-center justify-center space-y-4 sm:space-y-8">
-        <h1 className="font-bold text-2xl sm:text-4xl text-center">
-          Rezha Bahari
+      <div className="mt-32 mb-20 flex flex-col items-center justify-center space-y-4 sm:space-y-8">
+        <h1 className={`${gloria.className} font-bold text-2xl sm:text-4xl text-center`}>
+          rezha bahari
         </h1>
         <ProfilePhoto />
         <div>
           <h2 className="sm:text-2xl text-center">
-            Full Stack Developer with a{" "}
-            <span
-              className={`${gloria.className} font-hand text-xl sm:text-3xl font-semibold inline-block rotate-0`}
-            >
-              design
-            </span>{" "}
-            in mind
+            Full Stack Developer - Java(Type)script
           </h2>
           <h3 className="text-gray-400 mt-4 italic text-center mx-2 max-w-[35rem] text-xs sm:text-sm">
             Ideation. Wireframing. UI/UX. Coding. Testing. Deployment.{" "}

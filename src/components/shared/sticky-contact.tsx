@@ -10,7 +10,7 @@ import { ModeToggle } from "./mode-toggle";
 
 const StickyContact = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center z-20 relative">
       <div className="fixed flex justify-between items-center gap-4 backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-full p-2">
         <ModeToggle />
         <Link className="underline" href={"/blog"}>

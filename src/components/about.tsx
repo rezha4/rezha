@@ -20,9 +20,9 @@ import { TiHtml5 } from "react-icons/ti";
 
 const About = () => {
   return (
-    <div className="py-12 mx-auto px-4 space-y-6">
+    <div className="py-12  px-4 space-y-6">
       {/* <h2 className="text-3xl sm:text-4xl font-bold">/About</h2> */}
-      <div className="flex gap-2 items-center justify-center">
+      <div className="flex gap-4 items-center justify-center">
         <p className="font-mono">main tech stack:</p>
         <SiNextdotjs className="w-5 h-5 sm:w-10 sm:h-10" />
         <FaReact className="w-5 h-5 sm:w-10 sm:h-10" />
@@ -42,8 +42,8 @@ const About = () => {
         <p>
           As a full stack developer, I am involved in all process of
           development. Starting with ideation, to wireframes, UI/UX
-          designs, then coding, testing, deployment and it {"ends"} with
-          Continous Integration and Contious Deployment (CI/CD).
+          designs, then coding, testing, deployment and it {"ends"}{" "}
+          with Continous Integration and Contious Deployment (CI/CD).
           <br />
           <br />
           I am excited to talk about tech. Anything open source.
@@ -52,8 +52,9 @@ const About = () => {
           <br />
           <br />
           Outside of coding, I sometimes hike, Am very interested in
-          theology and islamic history, and I try being a great father
-          and husband to my little family.
+          theology and islamic history, I love productivity tips &
+          (trying) to become the best version of myself, and I try
+          being a great father and husband to my little family.
         </p>
       </div>
     </div>

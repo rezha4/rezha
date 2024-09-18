@@ -5,6 +5,50 @@ import {
   DoubleArrowUpIcon,
 } from "@radix-ui/react-icons";
 import { useState } from "react";
+import { Timeline } from "./ui/timeline";
+
+const data = [
+  {
+    title: {title: "CS50", isProfessional: false}, 
+    content: (
+      <div>
+        <p>PT</p>
+      </div>
+    )
+  },
+  {
+    title: {title: "The Odin Project", isProfessional: false}, 
+    content: (
+      <div>
+        <p>PT</p>
+      </div>
+    )
+  },
+  {
+    title: {title: "Platon", isProfessional: true}, 
+    content: (
+      <div>
+        <p>PT</p>
+      </div>
+    )
+  },
+  {
+    title: {title: "Innovate", isProfessional: true}, 
+    content: (
+      <div>
+        <p>PT</p>
+      </div>
+    )
+  },
+  {
+    title: {title: "Perigigi", isProfessional: true}, 
+    content: (
+      <div>
+        <p>PT</p>
+      </div>
+    )
+  },
+]
 
 const Careers = () => {
   const [show, setShow] = useState(false);
@@ -14,7 +58,8 @@ const Careers = () => {
       className="py-12 mx-auto px-4 space-y-6"
     >
       <h2 className="text-center text-3xl sm:text-4xl font-bold font-hand">Careers</h2>
-      <div className="flex flex-col items-center">
+      <Timeline data={data} />
+      {/* <div className="flex flex-col items-center">
         <button
           onClick={() => setShow(!show)}
           className={`transition-all ease-in-out w-fit ${!show && "animate-[pulse_2s_ease-in-out_infinite]"}`}
@@ -59,7 +104,7 @@ const Careers = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
