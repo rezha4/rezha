@@ -15,7 +15,7 @@ const BlogPosts = async() => {
       <div className="flex flex-wrap justify-center items-center gap-4">
         {posts.map((post) => (
           <Link key={post.id} href={`/blog/${post.id}`}>
-            <Card className="max-w-80" >
+            <Card className="max-w-80 hover:scale-105 transition-all ease-linear duration-150" >
               <CardHeader>
                 <CardTitle className="text-xl">{post.title}
                 </CardTitle>
@@ -25,7 +25,10 @@ const BlogPosts = async() => {
               </CardHeader>
               <CardFooter>
                 <p className="text-xs">
-                  {JSON.stringify(post.createdAt)}
+                  {new Date(post.createdAt as Date).toLocaleDateString(
+                    undefined,
+                    { year: "numeric", month: "long", day: "numeric" }
+                  )}
                 </p>
               </CardFooter>
             </Card>

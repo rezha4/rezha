@@ -215,11 +215,11 @@ export function PortfolioComponent() {
       <h2 className="text-center text-3xl sm:text-4xl font-bold font-hand">
         portfolio
       </h2>
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
           <Card
             key={project.id}
-            className="cursor-pointer hover:scale-105 transition-all ease-in-out"
+            className="cursor-pointer hover:scale-105 transition-all ease-linear duration-150"
             onClick={() => setSelectedProject(project)}
           >
             <CardHeader>

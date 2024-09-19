@@ -5,8 +5,8 @@ import Link from "next/link";
 const BlogPage = async () => {
   const posts = await prisma.post.findMany();
   return (
-    <div>
-      <div className="flex flex-col gap-4">
+    <div className="min-h-[70vh]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {posts.map((post) => (
           <Link href={`/blog/${post.id}`} key={post.id}>
             <div className="border rounded-md shadow-md p-2 space-y-2">

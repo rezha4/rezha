@@ -23,7 +23,7 @@ const Hero = () => {
         <ProfilePhoto />
         <div>
           <h2 className="sm:text-2xl text-center">
-            Full Stack Developer - Java(Type)script
+            Full Stack Developer - Javascript
           </h2>
           <h3 className="text-gray-400 mt-4 italic text-center mx-2 max-w-[35rem] text-xs sm:text-sm">
             Ideation. Wireframing. UI/UX. Coding. Testing. Deployment.{" "}

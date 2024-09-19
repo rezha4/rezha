@@ -1,22 +1,35 @@
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import React from "react";
-import { DiJavascript } from "react-icons/di";
+import {
+  DiLinux,
+  DiMongodb,
+  DiPostgresql,
+  DiPython,
+  DiWordpress,
+} from "react-icons/di";
 import {
   FaAws,
-  FaCss3,
+  FaDocker,
+  FaElementor,
   FaFigma,
-  FaHtml5,
   FaNode,
   FaReact,
 } from "react-icons/fa";
-import { IoLogoCss3, IoLogoJavascript } from "react-icons/io";
-import { RiTailwindCssFill } from "react-icons/ri";
 import {
+  RiFirebaseFill,
+  RiReactjsLine,
+  RiTailwindCssFill,
+} from "react-icons/ri";
+import {
+  SiAstro,
   SiExpress,
-  SiJavascript,
+  SiFlask,
+  SiGithubactions,
+  SiGooglecloud,
   SiNextdotjs,
   SiTypescript,
+  SiVite,
 } from "react-icons/si";
-import { TiHtml5 } from "react-icons/ti";
 
 const About = () => {
   return (
@@ -28,33 +41,41 @@ const About = () => {
         <FaReact className="w-5 h-5 sm:w-10 sm:h-10" />
         <RiTailwindCssFill className="w-5 h-5 sm:w-10 sm:h-10" />
         <SiTypescript className="w-5 h-5 sm:w-10 sm:h-10" />
-        {/* 
-        <FaFigma className="w-10 h-10" />
-        <FaHtml5 className="w-10 h-10" />
-        <IoLogoCss3 className="w-10 h-10" />
-        <SiJavascript className="w-10 h-10" />
-        <SiExpress className="w-10 h-10" />
-        <FaNode className="w-10 h-10" />
-        <FaAws className="w-10 h-10" /> 
-        */}
+      </div>
+      <div className="grid grid-cols-12 gap-2">
+        <DiPostgresql className="size-6" />
+        <RiFirebaseFill className="size-6" />
+        <SiVite className="size-6" />
+        <DiMongodb className="size-6" />
+        <DiLinux className="size-6" />
+        <FaFigma className="size-6" />
+        <SiExpress className="size-6" />
+        <FaNode className="size-6" />
+        <FaAws className="size-6" />
+        <SiGooglecloud className="size-6" />
+        <DiWordpress className="size-6" />
+        <FaElementor className="size-6" />
+        <SiGithubactions className="size-6" />
+        <GitHubLogoIcon className="size-6" />
+        <DiPython className="size-6" />
+        <SiFlask className="size-6" />
+        <FaDocker className="size-6" />
+        <SiAstro className="size-6" />
+        <RiReactjsLine className="size-6" />
       </div>
       <div className="max-w-[600px] mx-auto">
-        <p>
-          As a full stack developer, I am involved in all process of
-          development. Starting with ideation, to wireframes, UI/UX
-          designs, then coding, testing, deployment and it {"ends"}{" "}
-          with Continous Integration and Contious Deployment (CI/CD).
+        <p className="leading-6">
+          I am a self taught full stack developer. Taught myself how
+          to program with {"Harvard's"} CS50 & The Odin Project. I
+          started this journey on May 2023, and {"I've"} never stopped
+          learning from there.
           <br />
+          Programming has become my late-found passion, and I thrive
+          in a remote work environment, where {"I'm"} both independent
+          and efficient (I have been working remotely since December 2023)
           <br />
-          I am excited to talk about tech. Anything open source.
-          Linux. Web development. Low level coding. Game development.
-          3D. Graphic design. Animation.
-          <br />
-          <br />
-          Outside of coding, I sometimes hike, Am very interested in
-          theology and islamic history, I love productivity tips &
-          (trying) to become the best version of myself, and I try
-          being a great father and husband to my little family.
+          Outside of coding, I have other hobbies & interest; checkout
+          #hike, #run, #personal-development and more on my blog!
         </p>
       </div>
     </div>
