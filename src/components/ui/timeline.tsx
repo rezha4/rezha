@@ -64,7 +64,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
               <h3 className={clsx("hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500 ", {
-                "text-white dark:text-white": item.title.isProfessional
+                "text-black dark:text-white": item.title.isProfessional
               })}>
                 {item.title.title}
               </h3>
