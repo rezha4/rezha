@@ -16,11 +16,11 @@ const BlogPosts = async () => {
   // only 4 latest blog
 
   return (
-    <div className="py-12 mx-auto px-4 space-y-8">
+    <div className="py-12 mx-auto px-8 lg:px-40 space-y-8">
       <h2 className="text-center text-3xl sm:text-4xl font-bold font-hand">
         Blogs
       </h2>
-      <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4">
         {blogEntries.map((entry: any) => (
           <Card key={entry.sys.id}>
             <CardHeader>
