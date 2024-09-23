@@ -20,7 +20,6 @@ export async function generateStaticParams() {
 
 export default async function BlogPage() {
   const blogEntries = await fetchEntries();
-  console.log(blogEntries);
 
   return (
     <>
@@ -30,20 +29,27 @@ export default async function BlogPage() {
           {blogEntries.map((entry: any) => (
             <Card key={entry.sys.id}>
               <CardHeader>
-                <CardTitle>{entry.fields.title}</CardTitle>
+                <CardTitle className="min-h-14 leading-5">
+                  {entry.fields.title}
+                </CardTitle>
                 <CardDescription>
-                  {entry.sys.updatedAt}
+                  {entry.fields.title !==
+                  "Hosting Next.js 14 on Github Pages"
+                    ? new Date(entry.sys.updatedAt)
+                        .toLocaleString("id-ID", { timeZone: "UTC" })
+                        .replace(",", "")
+                        .replace(/\//g, "-")
+                    : "16-06-2024 12.00.00"}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <p className="text-gray-400">Tags:</p>
-                <ul className="flex gap-1 flex-wrap text-gray-400">
+              <CardContent className="min-h-20">
+                <p>
                   {entry.fields.tags.map(
                     (tag: string, index: number) => (
-                      <li key={index}>{tag}</li>
+                      <span key={index}>#{tag} </span>
                     )
                   )}
-                </ul>
+                </p>
               </CardContent>
               <CardFooter>
                 <Link href={`/blog/${entry.sys.id}`}>

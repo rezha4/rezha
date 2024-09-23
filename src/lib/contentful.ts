@@ -6,8 +6,6 @@ export const client = createClient({
 });
 
 export const fetchEntries = async () => {
-  console.log(process.env.CONTENTFUL_SPACE_ID)
-  console.log(process.env.CONTENTFUL_ACCESS_TOKEN)
   const entries = await client.getEntries();
   return entries.items;
 };
