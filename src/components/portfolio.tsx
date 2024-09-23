@@ -181,7 +181,7 @@ const projects: Project[] = [
     fullDescription:
       "Built with Next.js, ShadCN and Aceternity UI, this website is performant with green Lighthouse score, are responsive, and SEO friendly.",
     stack: ["Next.js", "ShadCN", "Vercel", "Google Analytics", "Meta Pixel"],
-    achievements: ["achievement1", "achievement2", "achievement3"],
+    achievements: ["Green Lighthouse score", "Responsive", "SEO Friendly"],
     role: "Front-End Developer",
     client: "",
     images: [
