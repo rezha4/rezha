@@ -64,18 +64,21 @@ const About = () => {
         <RiReactjsLine className="size-6" />
       </div>
       <div className="max-w-[600px] mx-auto">
-        <p className="leading-6">
+        <p className="leading-6 pt-4">
           I am a self taught full stack developer. Taught myself how
           to program with {"Harvard's"} CS50 & The Odin Project. I
           started this journey on May 2023, and {"I've"} never stopped
           learning from there.
           <br />
+          <br />
           Programming has become my late-found passion, and I thrive
           in a remote work environment, where {"I'm"} both independent
-          and efficient (I have been working remotely since December 2023)
+          and efficient (I have been profesionally working remotely
+          since December 2023)
           <br />
-          Outside of coding, I have other hobbies & interest; checkout
-          #hike, #run, #personal-development and more on my blog!
+          <br />
+          Outside of coding, I sometimes hike, run, lift. I read & listen to stuff
+          about personal development.
         </p>
       </div>
     </div>
