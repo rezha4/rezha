@@ -1,36 +1,54 @@
-import { prisma } from "@/lib/prisma";
+import { createClient } from "contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { ReactNode } from "react";
+import { Document } from "@contentful/rich-text-types";
 
-export async function generateStaticParams() {
-  const posts = await prisma.post.findMany();
+const client = createClient({
+  space: process.env.CONTENTFUL_SPACE_ID as string,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
+});
 
-  return posts.map((post) => ({
-    id: post.id.toString(),
-  }));
+async function fetchEntry(id: string) {
+  try {
+    return await client.getEntry(id);
+  } catch (error) {
+    console.error("Error fetching Contentful entry:", error);
+    return null;
+  }
 }
 
-const BlogPost = async ({ params }: { params: { id: string } }) => {
-  const currentPost = await prisma.post.findUnique({
-    where: {
-      id: Number(params.id),
-    },
-  });
+export async function generateStaticParams() {
+  try {
+    const entries = await client.getEntries({
+      content_type: "blogPost",
+    });
+    return entries.items.map((entry) => ({
+      id: entry.sys.id,
+    }));
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    return [];
+  }
+}
 
-  if (!currentPost) return <p>Error fetching content</p>
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const entry = await fetchEntry(params.id);
+
+  if (!entry) {
+    return <div>Blog post not found or error loading content.</div>;
+  }
 
   return (
     <div>
-      <h1 className="text-4xl text-center my-8">{currentPost?.title}</h1>
-      <div className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: currentPost?.content }} />
-      <p className="text-sm mt-8">Tags: {currentPost?.tags}</p>
-      <p className="text-sm mt-2">
-        Created on:{" "}
-        {new Date(currentPost?.createdAt as Date).toLocaleDateString(
-          undefined,
-          { year: "numeric", month: "long", day: "numeric" }
-        )}
-      </p>
+      <h1>{entry.fields.title as ReactNode}</h1>
+      <p>Tags: {Array.isArray(entry.fields.tags) && entry.fields.tags.join(", ")}</p>
+      <div>
+        {documentToReactComponents(entry.fields.content as Document)}
+      </div>
     </div>
   );
-};
-
-export default BlogPost;
+}

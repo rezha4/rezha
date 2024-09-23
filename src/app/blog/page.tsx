@@ -1,32 +1,28 @@
-import { prisma } from "@/lib/prisma"
-import { formatDateTime, formatTagsToArray } from "@/lib/utils";
-import Link from "next/link";
+import { fetchEntries } from '../../lib/contentful';
+import Link from 'next/link';
 
-const BlogPage = async () => {
-  const posts = await prisma.post.findMany();
+export async function generateStaticParams() {
+  const entries = await fetchEntries();
+  return entries.map((entry) => ({
+    id: entry.sys.id
+  }));
+}
+
+export default async function BlogPage() {
+  const blogEntries = await fetchEntries();
+
   return (
-    <div className="min-h-[70vh]">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-        {posts.map((post) => (
-          <Link href={`/blog/${post.id}`} key={post.id}>
-            <div className="border rounded-md shadow-md p-2 space-y-2">
-              <p className="text-xl font-semibold text-center">
-                {post.title}
-              </p>
-              <div className="flex gap-2">
-                {formatTagsToArray(post.tags).map((tag, index) => (
-                  <div key={index} className="border rounded-full px-2">
-                    <p>{tag}</p>
-                  </div>
-                ))}
-              </div>
-              <p>{formatDateTime(post.createdAt)}</p>
-            </div>
-          </Link>
+    <div>
+      <h1>Blog Posts</h1>
+      <ul>
+        {blogEntries.map((entry: any) => (
+          <li key={entry.sys.id}>
+            <h2>{entry.fields.title}</h2>
+            <p>{entry.fields.excerpt}</p>
+            <Link href={`/blog/${entry.sys.id}`}>Read more</Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
-
-export default BlogPage
