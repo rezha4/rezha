@@ -2,6 +2,7 @@ import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { ReactNode } from "react";
 import { Document } from "@contentful/rich-text-types";
+import StickyContact from "@/components/shared/sticky-contact";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID as string,
@@ -43,12 +44,23 @@ export default async function BlogPostPage({
   }
 
   return (
-    <div>
-      <h1>{entry.fields.title as ReactNode}</h1>
-      <p>Tags: {Array.isArray(entry.fields.tags) && entry.fields.tags.join(", ")}</p>
-      <div>
-        {documentToReactComponents(entry.fields.content as Document)}
+    <>
+      <StickyContact />
+      <div className="p-8 mt-8">
+        <h1 className="text-2xl lg:text-4xl mb-4">
+          {entry.fields.title as ReactNode}
+        </h1>
+        <p className="text-gray-500 mb-8">
+          Tags:{" "}
+          {Array.isArray(entry.fields.tags) &&
+            entry.fields.tags.join(", ")}
+        </p>
+        <div className="prose dark:prose-invert max-w-none">
+          {documentToReactComponents(
+            entry.fields.content as Document
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
