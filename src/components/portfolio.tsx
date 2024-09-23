@@ -50,7 +50,13 @@ const projects: Project[] = [
     fullDescription:
       "CRM Superapp for dentists, this goal encompasses many tasks & issues I've done throughout the project. Solution: I made sure to push only high quality code that solves bug, or add a new feature.",
     stack: ["React", "Vite", "Firebase"],
-    achievements: ["achievement1", "achievement2", "achievement3"],
+    achievements: [
+      "Odontogram",
+      "BPJS SatuSehat",
+      "Dev environment with 1:1 Firestore Database and Firebase Auth Hashes",
+      "BPJS Pcare",
+      "Google Calendar",
+    ],
     role: "Full Stack Developer",
     client: "",
     images: [
@@ -69,141 +75,148 @@ const projects: Project[] = [
   {
     id: 2,
     title: "AI.mage",
-    shortDescription: "Fully featured CRM targetted towards dentists",
+    shortDescription: "Micro-SaaS for manipulating images",
     fullDescription:
-      "CRM Superapp for dentists, this goal encompasses many tasks & issues I've done throughout the project. Solution: I made sure to push only high quality code that solves bug, or add a new feature.",
-    stack: ["React", "Vite", "Firebase"],
-    achievements: ["achievement1", "achievement2", "achievement3"],
+      "My try at Micro-SaaS, using cloudinary API, I can let users remove object, recolor object, or enhance their photos with prompt - no design skill required.",
+    stack: [
+      "Next.js",
+      "Stripe",
+      "Postgresql",
+      "Vercel",
+      "Cloudinary",
+      "Prisma",
+    ],
+    achievements: [
+      "Prompt based remove object, recolor object, and enhance quality",
+      "Stripe integration",
+      "Prisma ORM for Postgresql Database",
+    ],
     role: "Full Stack Developer",
     client: "",
     images: [
-      "/perigigi/perigigiresponsive.png",
-      "/perigigi/perigigi-instalment.png",
-      "/perigigi/perigigi-odontogram.png",
-      "/perigigi/perigigi-ohis.png",
-      "/perigigi/perigigi-satusehat.png",
-      "/perigigi/perigigibpjs.png",
-      "/perigigi/perigigiodontogram.png",
+      "/ai/aimageresponsive.png",
+      "/ai/ai-dashboard.png",
+      "/ai/ai-home.png",
+      "/ai/ai-init.png",
+      "/ai/ai-login.png",
+      "/ai/ai-payment.png",
+      "/ai/ai-recolor.png",
+      "/ai/ai-remove.png",
+      "/ai/ai-uploader.png",
     ],
-    liveLink: "https://perigigi.com/",
-    codeLink: "nda",
+    liveLink: "https://ai-mage.vercel.app/",
+    codeLink: "https://github.com/rezha4/ai.mage",
     thumbnail: "/ai/ai-home.png",
   },
   {
     id: 3,
     title: "Alphakidz",
-    shortDescription: "Fully featured CRM targetted towards dentists",
+    shortDescription: "Internal tool for nanny business",
     fullDescription:
-      "CRM Superapp for dentists, this goal encompasses many tasks & issues I've done throughout the project. Solution: I made sure to push only high quality code that solves bug, or add a new feature.",
-    stack: ["React", "Vite", "Firebase"],
-    achievements: ["achievement1", "achievement2", "achievement3"],
-    role: "Full Stack Developer",
-    client: "",
-    images: [
-      "/perigigi/perigigiresponsive.png",
-      "/perigigi/perigigi-instalment.png",
-      "/perigigi/perigigi-odontogram.png",
-      "/perigigi/perigigi-ohis.png",
-      "/perigigi/perigigi-satusehat.png",
-      "/perigigi/perigigibpjs.png",
-      "/perigigi/perigigiodontogram.png",
+      "Premium Nanny's internal tool for letting parent & nanny track progress of children's growth - mainly through Diary entry",
+    stack: ["Adalo", "Wordpress API"],
+    achievements: [
+      "Parents can hire nanny based on nanny's badge number",
+      "Nanny can handle multiple kids",
+      "Diary can record text & photo input, of 6 categories",
     ],
-    liveLink: "https://perigigi.com/",
+    role: "Adalo Developer",
+    client: "",
+    images: ["/alphakidz/alphakidzresponsive.png"],
+    liveLink: "nda",
     codeLink: "nda",
     thumbnail: "/alphakidz/alphakidzresponsive.png",
   },
   {
     id: 4,
     title: "Amana",
-    shortDescription: "Fully featured CRM targetted towards dentists",
+    shortDescription: "Architect & Design Interior Company Profile",
     fullDescription:
-      "CRM Superapp for dentists, this goal encompasses many tasks & issues I've done throughout the project. Solution: I made sure to push only high quality code that solves bug, or add a new feature.",
-    stack: ["React", "Vite", "Firebase"],
-    achievements: ["achievement1", "achievement2", "achievement3"],
-    role: "Full Stack Developer",
+      "At Platon, I was assigned to turn figma into Next.js code on this Amana Project.",
+    stack: ["Next.js", "Vercel", "MantineUI"],
+    achievements: ["Pixel perfect code"],
+    role: "Front-End Developer",
     client: "",
     images: [
-      "/perigigi/perigigiresponsive.png",
-      "/perigigi/perigigi-instalment.png",
-      "/perigigi/perigigi-odontogram.png",
-      "/perigigi/perigigi-ohis.png",
-      "/perigigi/perigigi-satusehat.png",
-      "/perigigi/perigigibpjs.png",
-      "/perigigi/perigigiodontogram.png",
+      "/amana/amanaresponsive.png",
+      "/amana/amanalayout.png",
+      "/amana/amanalayout2.png",
     ],
-    liveLink: "https://perigigi.com/",
+    liveLink: "https://www.propertyamana.com/",
     codeLink: "nda",
     thumbnail: "/amana/amanaresponsive.png",
   },
   {
     id: 5,
     title: "Golden Thorn",
-    shortDescription: "Fully featured CRM targetted towards dentists",
+    shortDescription:
+      "Responsive Company Profile that rank 1 on Google",
     fullDescription:
-      "CRM Superapp for dentists, this goal encompasses many tasks & issues I've done throughout the project. Solution: I made sure to push only high quality code that solves bug, or add a new feature.",
-    stack: ["React", "Vite", "Firebase"],
-    achievements: ["achievement1", "achievement2", "achievement3"],
-    role: "Full Stack Developer",
+      "I coded this responsive, performant and SEO friendly web in under 3 days delivery time - I also get creative with the hosting, leveraging Github Actions, FTP and a shared hosting CPanel.",
+    stack: ["Astro.js", "Flowbite", "Github Actions", "FTP"],
+    achievements: [
+      "Used Github Actions to build my astro.js app on Github's server",
+      "Send the static site via FTP to my shared hosting CPanel",
+      "Responsive, SEO friendly design with green Lighthouse score",
+      "Internationalization with 2 languages: English & Indonesian",
+      "Rank 1 on Google"
+    ],
+    role: "Front-End Developer + DevOps",
     client: "",
     images: [
-      "/perigigi/perigigiresponsive.png",
-      "/perigigi/perigigi-instalment.png",
-      "/perigigi/perigigi-odontogram.png",
-      "/perigigi/perigigi-ohis.png",
-      "/perigigi/perigigi-satusehat.png",
-      "/perigigi/perigigibpjs.png",
-      "/perigigi/perigigiodontogram.png",
+      "/goldenthorn/gi18n.png",
+      "/goldenthorn/glayout.png",
+      "/goldenthorn/galyoutw.png",
+      "/goldenthorn/goldenthornresponsive.png",
+      "/goldenthorn/gseo.png",
     ],
-    liveLink: "https://perigigi.com/",
+    liveLink: "https://goldenthornofficial.id/",
     codeLink: "nda",
     thumbnail: "/goldenthorn/glayout.png",
   },
   {
     id: 6,
     title: "Innovate",
-    shortDescription: "Fully featured CRM targetted towards dentists",
+    shortDescription: "Performant Company Profile that got page 1 on Google",
     fullDescription:
-      "CRM Superapp for dentists, this goal encompasses many tasks & issues I've done throughout the project. Solution: I made sure to push only high quality code that solves bug, or add a new feature.",
-    stack: ["React", "Vite", "Firebase"],
+      "Built with Next.js, ShadCN and Aceternity UI, this website is performant with green Lighthouse score, are responsive, and SEO friendly.",
+    stack: ["Next.js", "ShadCN", "Vercel", "Google Analytics", "Meta Pixel"],
     achievements: ["achievement1", "achievement2", "achievement3"],
-    role: "Full Stack Developer",
+    role: "Front-End Developer",
     client: "",
     images: [
-      "/perigigi/perigigiresponsive.png",
-      "/perigigi/perigigi-instalment.png",
-      "/perigigi/perigigi-odontogram.png",
-      "/perigigi/perigigi-ohis.png",
-      "/perigigi/perigigi-satusehat.png",
-      "/perigigi/perigigibpjs.png",
-      "/perigigi/perigigiodontogram.png",
+      "/innovate/innovateresponsive.png",
+      "/innovate/innovategoogle.png",
+      "/innovate/innovateperformance.png",
+      "/innovate/innovatehome.png",
     ],
-    liveLink: "https://perigigi.com/",
+    liveLink: "https://www.innovate.partners/",
     codeLink: "nda",
     thumbnail: "/innovate/innovatehome.png",
   },
-  {
-    id: 7,
-    title: "Sadean",
-    shortDescription: "Fully featured CRM targetted towards dentists",
-    fullDescription:
-      "CRM Superapp for dentists, this goal encompasses many tasks & issues I've done throughout the project. Solution: I made sure to push only high quality code that solves bug, or add a new feature.",
-    stack: ["React", "Vite", "Firebase"],
-    achievements: ["achievement1", "achievement2", "achievement3"],
-    role: "Full Stack Developer",
-    client: "",
-    images: [
-      "/perigigi/perigigiresponsive.png",
-      "/perigigi/perigigi-instalment.png",
-      "/perigigi/perigigi-odontogram.png",
-      "/perigigi/perigigi-ohis.png",
-      "/perigigi/perigigi-satusehat.png",
-      "/perigigi/perigigibpjs.png",
-      "/perigigi/perigigiodontogram.png",
-    ],
-    liveLink: "https://perigigi.com/",
-    codeLink: "nda",
-    thumbnail: "/sadean/sadeanhome.png",
-  },
+  // {
+  //   id: 7,
+  //   title: "Sadean Hasil Bumi",
+  //   shortDescription: "Company profile for a trading/exporter company",
+  //   fullDescription:
+  //     "CRM Superapp for dentists, this goal encompasses many tasks & issues I've done throughout the project. Solution: I made sure to push only high quality code that solves bug, or add a new feature.",
+  //   stack: ["Wordpress", "Elementor", "Cpanel"],
+  //   achievements: ["Built the entire page on an affordable shared hosting solutin + domain name"],
+  //   role: "Wordpress Developer",
+  //   client: "",
+  //   images: [
+  //     "/perigigi/perigigiresponsive.png",
+  //     "/perigigi/perigigi-instalment.png",
+  //     "/perigigi/perigigi-odontogram.png",
+  //     "/perigigi/perigigi-ohis.png",
+  //     "/perigigi/perigigi-satusehat.png",
+  //     "/perigigi/perigigibpjs.png",
+  //     "/perigigi/perigigiodontogram.png",
+  //   ],
+  //   liveLink: "https://perigigi.com/",
+  //   codeLink: "nda",
+  //   thumbnail: "/sadean/sadeanhome.png",
+  // },
 ];
 
 export function PortfolioComponent() {
@@ -227,7 +240,11 @@ export function PortfolioComponent() {
               <CardDescription>{project.role}</CardDescription>
             </CardHeader>
             <CardContent>
-              <img className="h-[128px] w-full object-cover object-top" src={project.thumbnail} alt="" />
+              <img
+                className="h-[128px] w-full object-cover object-top"
+                src={project.thumbnail}
+                alt=""
+              />
               <p className="mt-2">{project.shortDescription}</p>
               <div className="flex flex-wrap gap-2 mt-2">
                 {project.stack.slice(0, 3).map((skill, index) => (
@@ -269,18 +286,25 @@ export function PortfolioComponent() {
                     </Badge>
                   )}
                 </div>
-
                 <DialogDescription>
                   {selectedProject.fullDescription}
+                  <p>Features/Contributions:</p>
                   <ul className="list-disc grid-cols-2">
-                    {selectedProject.achievements.map(achievement => (
-                      <li key={achievement}>{achievement}</li>
-                    ))}
+                    {selectedProject.achievements.map(
+                      (achievement) => (
+                        <li key={achievement}>- {achievement}</li>
+                      )
+                    )}
                   </ul>
                 </DialogDescription>
 
                 <div className="flex space-x-4">
-                  {selectedProject.liveLink && (
+                  {selectedProject.liveLink === "nda" ? (
+                    <Button disabled>
+                      <ExternalLinkIcon className="w-4 h-4 mr-2" />
+                      View Live
+                    </Button>
+                  ) : (
                     <Button asChild>
                       <a
                         href={selectedProject.liveLink}
@@ -303,6 +327,7 @@ export function PortfolioComponent() {
                         href={selectedProject.codeLink}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="flex items-center"
                       >
                         <CodeIcon className="w-4 h-4 mr-2" />
                         View Code
