@@ -29,21 +29,21 @@ const Navbar = () => {
           }
           className="transition-all duration-300 ease-in-out px-4 sm:px-8 flex justify-between items-center gap-4 sm:gap-16 rounded-xl p-2"
         >
-          <button className="transition hover:scale-150 hover:-translate-y-1 active:-translate-y-1.5">
+          <a href="#home" className="transition hover:scale-150 hover:-translate-y-1 active:-translate-y-1.5">
             <HomeIcon width={25} height={25} />
-          </button>
-          <button className="transition hover:scale-150 hover:-translate-y-1 active:-translate-y-1.5">
+          </a>
+          <a href="#careers" className="transition hover:scale-150 hover:-translate-y-1 active:-translate-y-1.5">
             <BackpackIcon width={25} height={25} />
-          </button>
-          <button className="transition hover:scale-150 hover:-translate-y-1 active:-translate-y-1.5">
+          </a>
+          <a href="#porto" className="transition hover:scale-150 hover:-translate-y-1 active:-translate-y-1.5">
             <CubeIcon width={25} height={25} />
-          </button>
-          <button className="transition hover:scale-150 hover:-translate-y-1 active:-translate-y-1.5">
+          </a>
+          {/* <a  className="transition hover:scale-150 hover:-translate-y-1 active:-translate-y-1.5">
             <ChatBubbleIcon width={25} height={25} />
-          </button>
-          <button className="transition hover:scale-150 hover:-translate-y-1 active:-translate-y-1.5">
+          </a> */}
+          <a href="#blog" className="transition hover:scale-150 hover:-translate-y-1 active:-translate-y-1.5">
             <Pencil1Icon width={25} height={25} />
-          </button>
+          </a>
         </div>
       ) : (
         <div

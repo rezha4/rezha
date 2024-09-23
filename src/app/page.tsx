@@ -18,15 +18,21 @@ export default function Home() {
         <div className="fixed z-20 top-[90%] left-0 w-full flex justify-center">
           <Navbar />
         </div>
-        <div className="z-20 flex items-center justify-center flex-col md:flex-row md:gap-20">
+        <div id="home" className="z-20 flex items-center justify-center flex-col md:flex-row md:gap-20">
           <Hero />
           <About />
         </div>
-        <Careers />
+        <div id="careers">
+          <Careers />
+        </div>
         {/* <Projects /> */}
-        <PortfolioComponent />
+        <div id="porto">
+          <PortfolioComponent />
+        </div>
         {/* <WorkFlow /> */}
-        <BlogPosts />
+        <div id="blog">
+          <BlogPosts />
+        </div>
         <Footer />
       </div>
     </>
