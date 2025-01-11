@@ -1,7 +1,7 @@
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { ReactNode } from "react";
-import { Document } from "@contentful/rich-text-types";
+import { BLOCKS, Document } from "@contentful/rich-text-types";
 import StickyContact from "@/components/shared/sticky-contact";
 
 const client = createClient({
@@ -57,7 +57,17 @@ export default async function BlogPostPage({
         </p>
         <div className="prose dark:prose-invert max-w-none">
           {documentToReactComponents(
-            entry.fields.content as Document
+            entry.fields.content as Document, {
+              renderNode: {
+                [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+                  return (<img
+                    src={`https:${node.data.target.fields.file.url}`}
+                    height={node.data.target.fields.file.details.image.height}
+                    width={node.data.target.fields.file.details.image.width}
+                  />)
+                }
+              }
+            }
           )}
         </div>
       </div>

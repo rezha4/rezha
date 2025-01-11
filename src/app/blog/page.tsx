@@ -44,7 +44,7 @@ export default async function BlogPage() {
               </CardHeader>
               <CardContent className="min-h-20">
                 <p>
-                  {entry.fields.tags.map(
+                  {Array.isArray(entry.fields.tags) && entry.fields.tags.map(
                     (tag: string, index: number) => (
                       <span key={index}>#{tag} </span>
                     )
