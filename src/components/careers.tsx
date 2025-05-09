@@ -159,7 +159,7 @@ const data = [
     title: { title: "Innovate", isProfessional: true },
     content: (
       <div>
-        <p>July 2024 - Present</p>
+        <p>July 2024 - September 2024</p>
         <p>[professional - full time]</p>
         <br />
         <p className="text-sm">
@@ -175,6 +175,26 @@ const data = [
           <FaReact className="size-6" />
           <SiFirebase className="size-6" />
           <SiAstro className="size-6" />
+          <SiGithubactions className="size-6" />
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: { title: "GD Business", isProfessional: true },
+    content: (
+      <div>
+        <p>September 2024 - Present</p>
+        <p>[professional - full time]</p>
+        <br />
+        <p className="text-sm">
+          PT. Informasi Teknologi Kreatif is a SaaS company with 2 main product: GetDiskon and GD Business.
+          GD Business itself is a full fledged POS System with Backoffice, CRM and Employee Management.
+        </p>
+        <div className="flex gap-2 mt-4 flex-wrap">
+          <SiNextdotjs className="size-6" />
+          <GitHubLogoIcon className="size-6" />
+          <FaReact className="size-6" />
           <SiGithubactions className="size-6" />
         </div>
       </div>

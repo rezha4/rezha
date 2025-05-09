@@ -46,7 +46,7 @@ export default async function BlogPostPage({
   return (
     <>
       <StickyContact />
-      <div className="p-8 mt-8">
+      <div className="p-8 mt-8 lg:px-44">
         <h1 className="text-2xl lg:text-4xl mb-4">
           {entry.fields.title as ReactNode}
         </h1>
