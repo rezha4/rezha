@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma";
+import Link from "next/link";
 import { Button } from "./ui/button";
 import {
   Card,
@@ -8,12 +8,12 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import Link from "next/link";
-import { fetchEntries } from "@/lib/contentful";
+import getPosts from "@/lib/get-posts";
+import { formatDate } from "@/lib/utils";
+import BlogCard from "./shared/blog-card";
 
 const BlogPosts = async () => {
-  const blogEntries = await fetchEntries();
-  // only 4 latest blog
+  const blogs = getPosts().slice(0, 3);
 
   return (
     <div className="py-12 mx-auto px-8 lg:px-40 space-y-8">
@@ -21,37 +21,8 @@ const BlogPosts = async () => {
         Blogs
       </h2>
       <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4">
-        {blogEntries.map((entry: any) => (
-          <Card key={entry.sys.id}>
-            <CardHeader>
-              <CardTitle className="min-h-14 leading-5">
-                {entry.fields.title}
-              </CardTitle>
-              <CardDescription>
-                {entry.fields.title !==
-                "Hosting Next.js 14 on Github Pages"
-                  ? new Date(entry.sys.updatedAt)
-                      .toLocaleString("id-ID", { timeZone: "UTC" })
-                      .replace(",", "")
-                      .replace(/\//g, "-")
-                  : "16-06-2024 12.00.00"}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="min-h-20">
-              <p>
-                {Array.isArray(entry.fields.tags) && entry.fields.tags.map(
-                    (tag: string, index: number) => (
-                      <span key={index}>#{tag} </span>
-                    )
-                )}
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Link href={`/blog/${entry.sys.id}`}>
-                <Button>Read more</Button>
-              </Link>
-            </CardFooter>
-          </Card>
+        {blogs.map((blog) => (
+          <BlogCard key={blog.id} blog={blog} />
         ))}
       </div>
     </div>

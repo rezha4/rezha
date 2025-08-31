@@ -66,35 +66,35 @@ const About = () => {
       <div className="max-w-[600px] mx-auto">
         <p className="leading-6 pt-4">
           Full Stack Developer with main focus on Web Development, mainly using Javascript and its frameworks.
-          <br />
-          <br />
-          <ul className="list-disc pl-4">
-            <li>
-              React with Next JS is my main front end tool.
-            </li>
-            <li>
-              Node JS is my main back end runtime.
-            </li>
-            <li>
-              I test with Cypress (e2e), or jest (component/unit tests).
-            </li>
-            <li>
-              Github Actions for CI/CD.
-            </li>
-            <li>
-              NO-SQL (Firestore, Mongodb) and SQL (Postgres, SQLite) database knowledge.
-            </li>
-            <li>
-              Basic Docker skill.
-            </li>
-            <li>
-              Familiarity with Cloud Computing (AWS, GCP, Netlify etc)
-            </li>
-          </ul>
-          <br />
-          <br />
-          <p>Beside programming, I sometime hike/trail run on weekends around Surabaya/Jawa Timur 🏃🏃🏃</p>
         </p>
+        <br />
+        <br />
+        <ul className="list-disc pl-4">
+          <li>
+            React with Next JS is my main front end tool.
+          </li>
+          <li>
+            Node JS is my main back end runtime.
+          </li>
+          <li>
+            I test with Cypress (e2e), or jest (component/unit tests).
+          </li>
+          <li>
+            Github Actions for CI/CD.
+          </li>
+          <li>
+            NO-SQL (Firestore, Mongodb) and SQL (Postgres, SQLite) database knowledge.
+          </li>
+          <li>
+            Basic Docker skill.
+          </li>
+          <li>
+            Familiarity with Cloud Computing (AWS, GCP, Netlify etc)
+          </li>
+        </ul>
+        <br />
+        <br />
+        <p>Beside programming, I sometime hike or run on weekends around Surabaya/Jawa Timur 🏃🏃🏃</p>
       </div>
     </div>
   );

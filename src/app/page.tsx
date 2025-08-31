@@ -1,14 +1,11 @@
+import About from "@/components/about";
+import BlogPosts from "@/components/blog-posts";
 import Careers from "@/components/careers";
 import Hero from "@/components/hero";
-import Navbar from "@/components/shared/navbar";
-import Projects from "@/components/projects";
-import WorkFlow from "@/components/work-flow";
-import BlogPosts from "@/components/blog-posts";
-import { ModeToggle } from "@/components/shared/mode-toggle";
-import StickyContact from "@/components/shared/sticky-contact";
-import About from "@/components/about";
 import { PortfolioComponent } from "@/components/portfolio";
 import Footer from "@/components/shared/footer";
+import Navbar from "@/components/shared/navbar";
+import StickyContact from "@/components/shared/sticky-contact";
 
 export default function Home() {
   return (
@@ -18,7 +15,10 @@ export default function Home() {
         <div className="fixed z-20 top-[90%] left-0 w-full flex justify-center">
           <Navbar />
         </div>
-        <div id="home" className="z-20 flex items-center justify-center flex-col md:flex-row md:gap-20">
+        <div
+          id="home"
+          className="z-20 flex items-center justify-center flex-col md:flex-row md:gap-20"
+        >
           <Hero />
           <About />
         </div>
