@@ -12,9 +12,9 @@ export default function Home() {
     <>
       <StickyContact />
       <div className="dark:bg-black dark:text-white">
-        <div className="fixed z-20 top-[90%] left-0 w-full flex justify-center">
+        {/* <div className="fixed z-20 top-[90%] left-0 w-full flex justify-center">
           <Navbar />
-        </div>
+        </div> */}
         <div
           id="home"
           className="z-20 flex items-center justify-center flex-col md:flex-row md:gap-20"

@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import getPosts from "@/lib/get-posts";
+import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 
 export default async function BlogPage() {
@@ -26,13 +27,7 @@ export default async function BlogPage() {
                   {entry.title}
                 </CardTitle>
                 <CardDescription>
-                  {entry.title !==
-                  "Hosting Next.js 14 on Github Pages"
-                    ? new Date(entry.date)
-                        .toLocaleString("id-ID", { timeZone: "UTC" })
-                        .replace(",", "")
-                        .replace(/\//g, "-")
-                    : "16-06-2024 12.00.00"}
+                  {formatDate(entry.date)}
                 </CardDescription>
               </CardHeader>
               <CardContent className="min-h-20">

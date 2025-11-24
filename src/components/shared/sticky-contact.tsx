@@ -19,16 +19,19 @@ const StickyContact = () => {
     <div className="flex justify-center z-20 relative">
       <div className="fixed flex justify-between items-center gap-4 backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-full p-2">
         <ModeToggle />
-        {pathname === "/" ? <Link className="underline" href={"/blog"}>
-          <Pencil1Icon width={25} height={25} />
-        </Link> :
-        <Link className="underline" href={"/"}>
-          <HomeIcon width={25} height={25} />
-        </Link>}
+        {pathname === "/" ? (
+          <Link title="Blog" className="underline" href={"/blog"}>
+            Blog
+          </Link>
+        ) : (
+          <Link className="underline" href={"/"}>
+            Home
+          </Link>
+        )}
         <Link target="blank" href={"https://github.com/rezha4"}>
           <GitHubLogoIcon width={25} height={25} />
         </Link>
-        <Link
+        {/* <Link
           target="blank"
           href={"https://www.linkedin.com/in/rezha-bahari-bb23b5117/"}
         >
@@ -39,7 +42,7 @@ const StickyContact = () => {
         </Link>
         <Link target="blank" href={"https://wa.me/6281316917668"}>
           <FaWhatsapp style={{ width: 25, height: 25 }} />
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
