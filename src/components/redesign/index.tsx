@@ -36,7 +36,7 @@ export default async function Redesign() {
   const data = await getGithubContributions();
 
   return (
-    <div className="text-sm p-5 flex flex-col justify-between lg:grid lg:grid-cols-2 lg:gap-5 h-screen">
+    <div className="text-sm p-5  lg:grid lg:grid-cols-2 lg:gap-5 lg:h-screen">
       <div className="h-[90vh] overflow-auto scrollbar-hidden hidden lg:block space-y-10 lg:space-y-6 text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl px-10 pt-10">
         <Hero data={data} />
       </div>
@@ -143,21 +143,16 @@ export default async function Redesign() {
         <PortfolioComponent />
       </div>
 
-      <div className="lg:hidden space-y-6 lg:space-y-6 h-full my-5 lg:my-0 text-base sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl lg:pt-10 lg:px-10">
+      <div className="lg:hidden space-y-6 lg:space-y-6 my-5 lg:my-0 text-xl sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl lg:pt-10 lg:px-10">
         <Hero data={data} />
       </div>
-
-      <div className="flex justify-between items-end lg:hidden">
-        <div>
-          <Connect />
-        </div>
+        
+      <div className="lg:hidden pt-5">
+        <Connect />
 
         <Drawer direction="right">
           <DrawerTrigger asChild>
-            <Button
-              size="sm"
-              className="bg-[#56d364] rounded-none h-5 mb-0.5 px-1"
-            >
+            <Button size="sm" className="w-full mt-1">
               <p>MORE</p>
               <ChevronRightIcon />
             </Button>
@@ -168,7 +163,7 @@ export default async function Redesign() {
               <DrawerDescription></DrawerDescription>
             </DrawerHeader>
 
-            <div className="-mt-5">
+            <div>
               <SectionTitle title="GITHUB ACTIVITY" />
               <GithubActivitySm data={data} />
             </div>
@@ -194,41 +189,35 @@ export default async function Redesign() {
                 </Button>
               </Link>
               {/* <Link href="/product">
-                <Button
-                  className="w-full mb-1"
-                  variant="outline"
-                  size="sm"
-                >
-                  Product
-                </Button>
-              </Link>
-              <Link href="/service">
-                <Button
-                  className="w-full mb-1"
-                  variant="outline"
-                  size="sm"
-                >
-                  Service
-                </Button>
-              </Link> */}
+                  <Button
+                    className="w-full mb-1"
+                    variant="outline"
+                    size="sm"
+                  >
+                    Product
+                  </Button>
+                </Link>
+                <Link href="/service">
+                  <Button
+                    className="w-full mb-1"
+                    variant="outline"
+                    size="sm"
+                  >
+                    Service
+                  </Button>
+                </Link> */}
               {/* <Link href="/cv">
-                <Button
-                  className="w-full mb-1"
-                  variant="outline"
-                  size="sm"
-                >
-                  CV
-                </Button>
-              </Link> */}
+                  <Button
+                    className="w-full mb-1"
+                    variant="outline"
+                    size="sm"
+                  >
+                    CV
+                  </Button>
+                </Link> */}
             </div>
-            <DrawerClose
-              className="absolute bottom-3 right-5"
-              asChild
-            >
-              <Button
-                size="sm"
-                className="bg-[#56d364] rounded-none h-5 mb-0.5 px-1"
-              >
+            <DrawerClose asChild>
+              <Button size="sm" className="mt-1">
                 <ChevronLeftIcon className="mb-0.5" />
                 <p>LESS</p>
               </Button>

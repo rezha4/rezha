@@ -37,9 +37,9 @@ const StickyContact = () => {
             <Button variant="link" asChild>
               <Link href={"#"}>Service</Link>
             </Button> */}
-            <Button variant="link" asChild>
+            {/* <Button variant="link" asChild>
               <Link href={"https://rxresu.me/rezha.bahari/full-stack"} target="_blank">CV</Link>
-            </Button>
+            </Button> */}
             <Button variant="link" asChild>
               <Link href={"/"}>Rezha Bahari</Link>
             </Button>

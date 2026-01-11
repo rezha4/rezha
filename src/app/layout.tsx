@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.className}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.png" sizes="any" />
         <meta name="google-site-verification" content="TDjclvcOIJh_7m5QuGfWKGlHJNbZeYDTuPo-slTg68Y" />
       </head>
       <body>
