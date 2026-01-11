@@ -11,8 +11,9 @@ const gloria = Gloria_Hallelujah({
 });
 
 export const metadata: Metadata = {
-  title: "Rezha",
-  description: "Rezha Bahari's personal portfolio",
+  title: "Rezha Bahari",
+  description: "Rezha Bahari, a full stack developer with focus on web development using typescript, react and node.",
+  keywords: "rezha bahari",
 };
 
 export default function RootLayout({
@@ -21,21 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.className}`}
-    >
+    <html lang="en" className={`${inter.className}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="google-site-verification" content="TDjclvcOIJh_7m5QuGfWKGlHJNbZeYDTuPo-slTg68Y" />
       </head>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>

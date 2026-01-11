@@ -19,3 +19,13 @@ These are the tech I used to build this website.
 
 ## Content Management System
 - Contentful
+
+todo
+- projects marquee click to dialog
+- connect with me hover expand (default expand: github)
+- sitemap?
+  - blog
+  - product
+  - service
+  - CV
+  - portfolio
