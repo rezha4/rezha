@@ -28,7 +28,7 @@ export default function RootLayout({
         <meta name="google-site-verification" content="TDjclvcOIJh_7m5QuGfWKGlHJNbZeYDTuPo-slTg68Y" />
       </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>
