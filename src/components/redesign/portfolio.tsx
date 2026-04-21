@@ -218,7 +218,7 @@ export function PortfolioComponent() {
 
       <Dialog open={selectedProject !== null} onOpenChange={() => setSelectedProject(null)}>
         {selectedProject && (
-          <DialogContent className="bg-black">
+          <DialogContent className="bg-zinc-950 w-[60vw] max-w-none">
             <DialogHeader>
               <DialogTitle>{selectedProject.title}</DialogTitle>
             </DialogHeader>
@@ -234,7 +234,7 @@ export function PortfolioComponent() {
                     <Badge variant="secondary">+{selectedProject.stack.length - 3}</Badge>
                   )}
                 </div>
-                <DialogDescription>
+                <DialogDescription className="text-white">
                   {selectedProject.fullDescription}
                   <p>Features/Contributions:</p>
                   <ul className="list-disc grid-cols-2">

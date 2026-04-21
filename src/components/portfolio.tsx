@@ -20,6 +20,8 @@ import { ScrollArea } from "../components/ui/scroll-area";
 import { CodeIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
 import { Gloria_Hallelujah } from "next/font/google";
 import { Badge } from "./ui/badge";
+import StickyContact from "./shared/sticky-contact";
+import AnimatedContent from "./AnimatedContent";
 
 type Project = {
   id: number;
@@ -43,6 +45,20 @@ const gloria = Gloria_Hallelujah({
 });
 
 const projects: Project[] = [
+  {
+    id: 7,
+    title: "GD Business",
+    shortDescription: "Fully Featured POS + Back Office SaaS",
+    fullDescription: "",
+    stack: [],
+    achievements: [],
+    role: "Full Stack Developer",
+    client: "",
+    images: ["./gdbusiness.png"],
+    liveLink: "https://gdbusiness.id/",
+    codeLink: "nda",
+    thumbnail: "./gdbusiness.png",
+  },
   {
     id: 1,
     title: "Perigigi - CRM For Dentists of Indonesia",
@@ -166,7 +182,7 @@ const projects: Project[] = [
     images: [
       "./goldenthorn/gi18n.png",
       "./goldenthorn/glayout.png",
-      "./goldenthorn/galyoutw.png",
+      "./goldenthorn/glayoutw.png",
       "./goldenthorn/goldenthornresponsive.png",
       "./goldenthorn/gseo.png",
     ],
@@ -224,11 +240,23 @@ export function PortfolioComponent() {
     useState<Project | null>(null);
 
   return (
-    <div className="container mx-auto py-12">
-      <h2 className="text-center text-3xl sm:text-4xl font-bold font-hand">
-        portfolio
-      </h2>
-      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="px-8 py-4">
+      <AnimatedContent
+        distance={100}
+        direction="horizontal"
+        reverse={true}
+        duration={3}
+        ease="power3.out"
+        initialOpacity={0}
+        animateOpacity
+        scale={1}
+        threshold={0.1}
+        delay={0}
+      >
+        <h1 className="text-4xl">Portfolio</h1>
+        <p>Projects I{`'`}ve built and are part of</p>
+      </AnimatedContent>
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
           <Card
             key={project.id}
@@ -268,7 +296,7 @@ export function PortfolioComponent() {
         onOpenChange={() => setSelectedProject(null)}
       >
         {selectedProject && (
-          <DialogContent className="max-w-3xl">
+          <DialogContent className="bg-black max-w-3xl">
             <DialogHeader>
               <DialogTitle>{selectedProject.title}</DialogTitle>
             </DialogHeader>
@@ -288,7 +316,7 @@ export function PortfolioComponent() {
                 </div>
                 <DialogDescription>
                   {selectedProject.fullDescription}
-                  <p>Features/Contributions:</p>
+                  {selectedProject.achievements.length > 0 && <p>Features/Contributions:</p>}
                   <ul className="list-disc grid-cols-2">
                     {selectedProject.achievements.map(
                       (achievement) => (
@@ -319,7 +347,7 @@ export function PortfolioComponent() {
                   {selectedProject.codeLink === "nda" ? (
                     <Button disabled variant="outline">
                       <CodeIcon className="w-4 h-4 mr-2" />
-                      View Code
+                      NDA
                     </Button>
                   ) : (
                     <Button variant="outline">
@@ -360,6 +388,8 @@ export function PortfolioComponent() {
           </DialogContent>
         )}
       </Dialog>
+      
+      <StickyContact />
     </div>
   );
 }

@@ -7,10 +7,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import {
-  ChevronRightIcon,
-  ChevronLeftIcon,
-} from "@radix-ui/react-icons";
+import { ChevronRightIcon, ChevronLeftIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
@@ -25,7 +22,7 @@ import GithubActivitySm from "./github-activity-sm";
 async function getGithubContributions() {
   const res = await fetch(
     "https://github-contributions-api.jogruber.de/v4/rezha4?y=last",
-    { next: { revalidate: 3600 } } // Cache for 1 hour
+    { next: { revalidate: 3600 } }, // Cache for 1 hour
   );
 
   if (!res.ok) throw new Error("Failed to fetch");
@@ -59,19 +56,9 @@ export default async function Redesign() {
 
               <div>
                 <Pointer>
-                  <Image
-                    src={"/rezha-bahari-hero.webp"}
-                    height={300}
-                    width={300}
-                    alt=""
-                  />
+                  <Image src={"/rezha-bahari-hero.webp"} height={300} width={300} alt="" />
                 </Pointer>
-                <Image
-                  src={"/rezha-bahari-hero.webp"}
-                  height={68}
-                  width={68}
-                  alt=""
-                />
+                <Image src={"/rezha-bahari-hero.webp"} height={68} width={68} alt="" />
               </div>
             </div>
             {/* <p className="lg:block hidden text-justify">
@@ -102,12 +89,18 @@ export default async function Redesign() {
           <div className="hidden lg:block text-justify">
             <SectionTitle title="SITEMAP" />
             <Link href="/blog">
-              <Button
-                className="w-full mb-1 mt-1"
-                variant="outline"
-                size="sm"
-              >
+              <Button className="w-full mb-1 mt-1" variant="outline" size="sm">
                 Blog
+              </Button>
+            </Link>
+            <Link href="/service">
+              <Button className="w-full mb-1" variant="outline" size="sm">
+                Service
+              </Button>
+            </Link>
+            <Link href="/portfolio">
+              <Button className="w-full mb-1" variant="outline" size="sm">
+                Portfolio
               </Button>
             </Link>
             {/* <Link href="/product">
@@ -117,15 +110,6 @@ export default async function Redesign() {
                 size="sm"
               >
                 Product
-              </Button>
-            </Link>
-            <Link href="/service">
-              <Button
-                className="w-full mb-1"
-                variant="outline"
-                size="sm"
-              >
-                Service
               </Button>
             </Link> */}
             {/* <Link href="/cv">
@@ -146,7 +130,7 @@ export default async function Redesign() {
       <div className="lg:hidden space-y-6 lg:space-y-6 my-5 lg:my-0 text-xl sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl lg:pt-10 lg:px-10">
         <Hero data={data} />
       </div>
-        
+
       <div className="lg:hidden pt-5">
         <Connect />
 
@@ -180,12 +164,18 @@ export default async function Redesign() {
             <div className="text-justify">
               <SectionTitle title="SITEMAP" />
               <Link href="/blog">
-                <Button
-                  className="w-full mb-1 mt-1"
-                  variant="outline"
-                  size="sm"
-                >
+                <Button className="w-full mb-1 mt-1" variant="outline" size="sm">
                   Blog
+                </Button>
+              </Link>
+              <Link href="/service">
+                <Button className="w-full mb-1" variant="outline" size="sm">
+                  Service
+                </Button>
+              </Link>
+              <Link href="/portfolio">
+                <Button className="w-full mb-1" variant="outline" size="sm">
+                  Portfolio
                 </Button>
               </Link>
               {/* <Link href="/product">
@@ -195,15 +185,6 @@ export default async function Redesign() {
                     size="sm"
                   >
                     Product
-                  </Button>
-                </Link>
-                <Link href="/service">
-                  <Button
-                    className="w-full mb-1"
-                    variant="outline"
-                    size="sm"
-                  >
-                    Service
                   </Button>
                 </Link> */}
               {/* <Link href="/cv">

@@ -1,13 +1,5 @@
+import AnimatedContent from "@/components/AnimatedContent";
 import StickyContact from "@/components/shared/sticky-contact";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import getPosts from "@/lib/get-posts";
 import { formatDate } from "@/lib/utils";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
@@ -17,8 +9,23 @@ export default async function BlogPage() {
   const posts = getPosts();
 
   return (
-    <>
-      <div className="p-2 sm:p-8 mt-8 pb-20">
+    <div className="px-8 py-4">
+      <AnimatedContent
+        distance={100}
+        direction="horizontal"
+        reverse={true}
+        duration={3}
+        ease="power3.out"
+        initialOpacity={0}
+        animateOpacity
+        scale={1}
+        threshold={0.1}
+        delay={0}
+      >
+        <h1 className="text-4xl">Blog</h1>
+        <p>My writings, dev log and learning notes</p>
+      </AnimatedContent>
+      <div className=" mt-8 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
             <Link href={`/blog/${post.id}`} key={post.id}>
@@ -31,9 +38,7 @@ export default async function BlogPage() {
                   {/* Date */}
                   <div className="flex items-center text-sm text-zinc-400 mb-4">
                     <Calendar className="w-4 h-4 mr-2" />
-                    <time dateTime={post.date}>
-                      {formatDate(post.date)}
-                    </time>
+                    <time dateTime={post.date}>{formatDate(post.date)}</time>
                   </div>
                   {/* Title */}
                   <h2 className="text-2xl font-bold text-white mb-4 leading-tight group-hover:text-zinc-100 transition-colors duration-300">
@@ -67,6 +72,6 @@ export default async function BlogPage() {
         </div>
       </div>
       <StickyContact />
-    </>
+    </div>
   );
 }

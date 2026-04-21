@@ -20,7 +20,11 @@ const StickyContact = () => {
   return (
     <div className="flex justify-center z-20 absolute bottom-16 w-full">
       <div className="fixed flex justify-between items-center gap-4 backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-full p-2">
-        <OrangeBox />
+        <Button variant="link" asChild>
+          <Link href={"/"}>
+            <OrangeBox />
+          </Link>
+        </Button>
         {/* <ModeToggle /> */}
         {pathname === "/" ? (
           <Link title="Blog" className="underline" href={"/blog"}>
@@ -31,18 +35,18 @@ const StickyContact = () => {
             <Button variant="link" asChild>
               <Link href={"/blog"}>Blog</Link>
             </Button>
-            {/* <Button variant="link" asChild>
-              <Link href={"#"}>Product</Link>
+            <Button variant="link" asChild>
+              <Link href={"/service"}>Service</Link>
             </Button>
             <Button variant="link" asChild>
-              <Link href={"#"}>Service</Link>
+              <Link href={"/portfolio"}>Portfolio</Link>
+            </Button>
+            {/* <Button variant="link" asChild>
+              <Link href={"#"}>Product</Link>
             </Button> */}
             {/* <Button variant="link" asChild>
               <Link href={"https://rxresu.me/rezha.bahari/full-stack"} target="_blank">CV</Link>
             </Button> */}
-            <Button variant="link" asChild>
-              <Link href={"/"}>Rezha Bahari</Link>
-            </Button>
           </>
         )}
         {/* <Link target="blank" href={"https://github.com/rezha4"}>
